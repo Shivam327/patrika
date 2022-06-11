@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import RenderList from '../components/RenderList';
 import AddDetails from './AddDetails';
 
