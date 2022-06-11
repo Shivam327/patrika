@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { useContext } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import NavigationBar from './components/Navbar';
+import AddPage from './page/AddPage';
+import AdminPage from './page/Adminpage';
+import AuthContext from './store/store';
 
 function App() {
+  const { isLoggedIn } = useContext(AuthContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isLoggedIn ? (
+        <>
+          <NavigationBar />
+          <Routes>
+            <Route path='/' element={<AddPage />} />
+          </Routes>
+        </>
+      ) : (
+        <AdminPage />
+      )}
+    </>
   );
 }
 
