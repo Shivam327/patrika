@@ -6,7 +6,7 @@ const ItemCard = ({ IssueId, IsDelete, IssueDate, IssueDetail, IssuePdf, IssueTh
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <Card border='info' style={{ width: '100%' }} className='my-1'>
+    <Card border='info' style={{ width: '100' }} className='my-3'>
       <Row>
         <Col>
           <ListGroup className='my-1'>

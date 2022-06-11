@@ -4,8 +4,8 @@ import AuthContext from '../store/store';
 
 const AdminPage = () => {
   const { onLogin } = useContext(AuthContext);
-  const [username, setUsername] = useState('Admin');
-  const [password, setPassword] = useState('Admin@123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const login = (e) => {
     e.preventDefault();
