@@ -25,8 +25,10 @@ export const getData = (setFunc) => {
   const q = query(collection(db, 'IssueMaster'));
   onSnapshot(q, (querySnapshot) => {
     const allData = querySnapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }));
-    console.log(allData);
-    setFunc(allData);
+    const filteredData = allData.sort((a, b) => {
+      return a.data.IssueId - b.data.IssueId;
+    });
+    setFunc(filteredData);
   });
 };
 
